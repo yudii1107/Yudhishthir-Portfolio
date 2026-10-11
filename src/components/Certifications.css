@@ -1,0 +1,142 @@
+
+.certifications-section {
+  position: relative;
+}
+
+.certifications-heading {
+  margin-top: 35px;
+  margin-bottom: 42px;
+}
+
+.certifications-heading .section-title {
+  max-width: 700px;
+  margin-bottom: 18px;
+}
+
+.certifications-heading .section-description {
+  max-width: 570px;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.certification-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.008)
+  );
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(155, 92, 255, 0.4);
+}
+
+.certification-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certification-number {
+  color: var(--purple);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.certification-category {
+  padding: 6px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.certification-symbol {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin: 28px 0 25px;
+  border: 1px solid rgba(155, 92, 255, 0.25);
+  border-radius: 15px;
+  background: rgba(155, 92, 255, 0.08);
+  color: #c5a2ff;
+  font-size: 27px;
+}
+
+.certification-provider {
+  color: #9c83d4;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.certification-content h3 {
+  margin-top: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.certification-content p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.certification-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: #888397;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.certification-arrow {
+  color: var(--purple);
+  font-size: 19px;
+  transition: transform 0.25s ease;
+}
+
+.certification-card:hover .certification-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 700px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certification-card,
+  .certification-arrow {
+    transition: none;
+  }
+
+  .certification-card:hover {
+    transform: none;
+  }
+
+  .certification-card:hover .certification-arrow {
+    transform: none;
+  }
+}

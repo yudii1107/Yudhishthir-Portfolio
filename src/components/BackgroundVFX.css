@@ -1,0 +1,140 @@
+
+.ambient-vfx {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.ambient-vfx-grid {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(155, 92, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 141, 255, 0.13) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: radial-gradient(ellipse at center, black 5%, transparent 72%);
+  animation: ambient-grid-drift 45s linear infinite;
+}
+
+.ambient-vfx-orb {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.13;
+  will-change: transform;
+}
+
+.ambient-orb-purple {
+  top: 5%;
+  left: -230px;
+  background: #9b5cff;
+  animation: ambient-float-one 22s ease-in-out infinite alternate;
+}
+
+.ambient-orb-blue {
+  top: 38%;
+  right: -250px;
+  background: #326dff;
+  animation: ambient-float-two 27s ease-in-out infinite alternate;
+}
+
+.ambient-orb-violet {
+  bottom: -250px;
+  left: 35%;
+  background: #762cff;
+  animation: ambient-float-three 30s ease-in-out infinite alternate;
+}
+
+.ambient-vfx-beam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  opacity: 0.18;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(155, 92, 255, 0.35),
+    rgba(76, 141, 255, 0.2),
+    transparent
+  );
+}
+
+.ambient-vfx-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+}
+
+@keyframes ambient-grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(70px, 70px, 0);
+  }
+}
+
+@keyframes ambient-float-one {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(180px, 220px, 0) scale(1.2);
+  }
+}
+
+@keyframes ambient-float-two {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+
+  to {
+    transform: translate3d(-200px, 150px, 0) scale(1.15);
+  }
+}
+
+@keyframes ambient-float-three {
+  from {
+    transform: translate3d(-100px, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(120px, -180px, 0) scale(1.25);
+  }
+}
+
+@media (max-width: 700px) {
+  .ambient-vfx-orb {
+    width: 280px;
+    height: 280px;
+    filter: blur(85px);
+    opacity: 0.1;
+  }
+
+  .ambient-vfx-grid {
+    background-size: 48px 48px;
+    opacity: 0.08;
+  }
+
+  .ambient-vfx-beam {
+    opacity: 0.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-vfx-grid,
+  .ambient-vfx-orb {
+    animation: none;
+  }
+}

@@ -1,0 +1,72 @@
+
+#root {
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: 110px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #bda0ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--purple), var(--blue));
+}
+
+.section-title {
+  margin-top: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.section-description {
+  max-width: 580px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.gradient-text {
+  color: transparent;
+  background: linear-gradient(110deg, #c5a5ff, #8b5cf6 48%, #65a5ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .section {
+    padding-block: 76px;
+  }
+}
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}

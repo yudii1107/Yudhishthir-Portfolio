@@ -1,0 +1,243 @@
+
+.experience-section {
+  position: relative;
+}
+
+.experience-heading {
+  margin-top: 35px;
+  margin-bottom: 48px;
+}
+
+.experience-heading .section-title {
+  max-width: 700px;
+  margin-bottom: 18px;
+}
+
+.experience-heading .section-description {
+  max-width: 600px;
+}
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.experience-timeline::before {
+  position: absolute;
+  top: 34px;
+  bottom: 34px;
+  left: 26px;
+  width: 1px;
+  content: '';
+  background: linear-gradient(
+    to bottom,
+    rgba(155, 92, 255, 0.65),
+    rgba(76, 141, 255, 0.12)
+  );
+}
+
+.experience-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.experience-marker {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.experience-marker span {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(155, 92, 255, 0.35);
+  border-radius: 16px;
+  background: #100d18;
+  color: #c3a0ff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 25px rgba(155, 92, 255, 0.08);
+}
+
+.experience-content {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.008)
+  );
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.experience-content:hover {
+  border-color: rgba(155, 92, 255, 0.38);
+  transform: translateY(-3px);
+}
+
+.experience-topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.experience-type {
+  color: var(--purple);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.experience-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(107, 205, 153, 0.18);
+  border-radius: 20px;
+  color: #8fdbb0;
+  font-size: 11px;
+}
+
+.experience-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #78d6a0;
+}
+
+.experience-status.status-ongoing {
+  border-color: rgba(76, 141, 255, 0.22);
+  color: #8bb7ff;
+}
+
+.experience-status.status-ongoing > span {
+  background: #65a0ff;
+}
+
+.experience-content h3 {
+  margin-bottom: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.experience-meta-divider {
+  color: var(--purple);
+}
+
+.experience-description {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.experience-points {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-points li {
+  position: relative;
+  padding-left: 19px;
+  color: #c6c2d1;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.experience-points li::before {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  content: '';
+}
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.experience-technologies span {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #c8c3d4;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .experience-timeline {
+    gap: 16px;
+  }
+
+  .experience-timeline::before {
+    left: 19px;
+  }
+
+  .experience-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .experience-marker span {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+
+  .experience-content {
+    padding: 20px;
+  }
+
+  .experience-content h3 {
+    font-size: 20px;
+  }
+
+  .experience-meta {
+    gap: 7px;
+    line-height: 1.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-content {
+    transition: none;
+  }
+
+  .experience-content:hover {
+    transform: none;
+  }
+}

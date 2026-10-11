@@ -1,0 +1,147 @@
+
+.developer-terminal {
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  border: 1px solid rgba(155, 92, 255, 0.3);
+  border-radius: 15px;
+  background: rgba(8, 8, 13, 0.9);
+  box-shadow:
+    0 0 40px rgba(115, 55, 200, 0.1),
+    inset 0 0 25px rgba(155, 92, 255, 0.025);
+  backdrop-filter: blur(16px);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 17px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.terminal-dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.terminal-dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.terminal-title {
+  flex: 1;
+  color: #a7a4b4;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.terminal-status {
+  color: #8d70ff;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.terminal-body {
+  min-height: 190px;
+  padding: 22px 18px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 27px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.terminal-prompt {
+  flex-shrink: 0;
+  color: #a679ff;
+}
+
+.terminal-command {
+  color: #f0edf8;
+}
+
+.terminal-output {
+  color: #b0b0c0;
+}
+
+.terminal-success {
+  color: #75dba0;
+}
+
+.terminal-caret {
+  width: 7px;
+  height: 15px;
+  margin-top: 3px;
+  background: #a679ff;
+  animation: terminal-blink 1s steps(2, start) infinite;
+}
+
+.terminal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 17px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #777487;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.terminal-footer > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.terminal-footer i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5edc9a;
+  box-shadow: 0 0 8px rgba(94, 220, 154, 0.7);
+}
+
+@keyframes terminal-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 500px) {
+  .terminal-body {
+    min-height: 175px;
+    padding: 18px 13px;
+    font-size: 10px;
+  }
+
+  .terminal-header {
+    gap: 10px;
+    padding: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-caret {
+    animation: none;
+  }
+}
